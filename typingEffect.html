@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing effect</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            border: none;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height:100vh;
+            font-family: 'Open sans', sans-serif;
+            font-size: .8rem;
+            background: #121212;
+            color: #FF4754;
+        }
+        h1{
+            font-weight: 500;
+        }
+        .typewriter h1{
+            overflow:hidden;
+            border-right:2px solid;
+            white-space: nowrap;
+            margin: 0 auto;
+            user-select: none;
+            animation: typing 3.6s steps(30,end),
+                blink-caret 1s step-end infinite;
+        }
+        @keyframes typing{
+            from {
+                width:0;
+            }
+            to{
+                width: 100%;
+            }
+        }
+        @keyframes blink-caret{
+            50%{
+                border-color: transparent;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="typewriter">
+        <h1> @TusharMohan</h1>
+    </div>
+</body>
+</html>

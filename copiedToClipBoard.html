@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>copied to clipboard</title>
+</head>
+<body>
+    <div class="box">
+        <p id="content">click below to copy the content to clipboard</p>
+        <i onclick="copy()">Click To copy</i>
+    </div>
+    <div class="box">
+        <input type="text" />
+    </div>
+    <script>
+        function copy(){
+            var content=document.getElementById('content').innerHTML;
+            var el=document.createElement('textarea');
+            el.value=content;
+            el.setAttribute('readonly','');
+            el.style={position:'absolute', left:'-9999px'};
+            document.querySelector('body').appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            alert('Copied');
+            document.querySelector('body').removeChild(el);
+        }
+    </script>
+</body>
+</html>

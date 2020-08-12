@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lazy Image Loader</title>
+    <style>
+        body{
+            background: #161d2d;
+            min-height:100vh;
+            font-family: 'Courier New', Courier, monospace;
+            font-size:14px;
+            text-align:center;
+            overflow: hidden;
+        }
+        .grid{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .grid img{
+            width: 120px;
+            animation: fadeInAndScale 0.3s ease-in-out forwards;
+        }
+        @keyframes fadeInAndScale{
+            from{
+                opacity:0;
+                transform:scale(0);
+            }
+            to{
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="grid"></div>
+    <script>
+        const grid=document.querySelector('.grid');
+        const createImg=(url)=>{
+            const img=document.createElement('img');
+            img.src=url;
+            return img;
+        }
+        let i=1;
+        setInterval(()=>{
+            if(i<81){
+                i++;
+                grid.appendChild(createImg('./1.jpg'));
+            }
+        },120);
+    </script>
+</body>
+</html>

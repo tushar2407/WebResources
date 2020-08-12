@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <style>
+        .input-field input{
+            display:block;
+            width:100%;
+            box-sizing:border-box;
+            border:1px solid #d4d4d4;
+            padding:15px 20px;
+            background:white;
+            border-radius:10px;
+            outline:none;
+            transition:0.4s ease;
+        }
+        .input-field input:focus{
+            box-shadow: 0px 4px 20px rgba(169,169,169,0.25);
+        }
+    </style>
+</head>
+<body>
+    <div class="input-field">
+
+        <input type="password" name="password" id="password" placeholder="enter password"/>
+        <button id="eye-btn" class="fa fa-eye"></button>
+    </div>
+    <script>
+        const eye=document.getElementById("eye-btn");
+        const passwordField=document.getElementById("password");
+        eye.addEventListener("click",(e)=>{
+            if(passwordField.type==="password"){
+                e.target.setAttribute("class","fas fa-eye-slash");
+                password.type="text";
+            }
+            else{
+                e.target.setAttribute("class","fas fa-eye");
+                passwordField.type="password";
+            }
+        })
+    </script>
+</body>
+</html>

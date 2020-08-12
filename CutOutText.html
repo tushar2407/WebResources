@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cut out text</title>
+    <style>
+        body{
+            background-color: white;
+            min-height: 100vh;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+        }
+        .banner{
+            width:100%;
+            min-height:200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background-color: aliceblue;
+            box-sizing: border-box;
+        }
+        .banner-title{
+            text-transform:uppercase;
+            font-size:6em;
+            background-image: url('1.jpg');
+            background-size: 800px;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .banner-description{
+            color:black;
+            font-size: 1.3em;
+            font-weight: 300;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="banner">
+        <div class="banner-text">
+            <h1 class="banner-title"> HI I am so and so</h1>
+            <p class ="banner-description"> Full-stack developer</p>
+        </div>
+    </div>
+</body>
+</html>

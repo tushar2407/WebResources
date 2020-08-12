@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" class="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        ScrollReveal({ reset: true });
+    </script>
+    <style>
+        html.sr .load-hidden {
+            visibility: hidden;
+        }
+        html.sr .widget {
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1 class="headline load-hidden" style="margin-top:500px">
+        Widget Inc.
+    </h1>
+    <p class="tagline">
+        The perfect widgets.
+        <span class="punchline">Forever.</span>
+    </p>
+    <ul class="widget-list" style="color:black;">
+        <li class="widget">1</li>
+        <li class="widget">2</li>
+        <li class="widget">3</li>
+        <li class="widget">4</li>
+        <li class="widget">5</li>
+    </ul>
+    <h1 class="slide-up">sdfasdfasd</h1>
+    <h1 class="slide-right">sdfasdfasd</h1>
+    <h1 class="easing">erjjeuroe</h1>
+    <h1 class="flip" styel="perspective:800px;">erjjeuroeacasdas</h1>
+    <script>
+        ScrollReveal().reveal('.headline');
+        ScrollReveal().reveal('.tagline', { delay: 500 });
+    ScrollReveal().reveal('.punchline', { delay: 2000 });
+    ScrollReveal().reveal('.widget', { interval: 16, reset:true });
+    var slideUp = {
+        distance: '-150%',
+        origin: 'bottom',
+        opacity: null,
+        margin: '100px'
+    };
+    var slideRight = {
+        distance: '-150%',
+        origin: 'right',
+        opacity: null,
+        margin: '100px',
+        //easing:'cubic-bezier(0.5,0,0,1)'
+    };
+    ScrollReveal().reveal('.flip',{rotate:{x:20,z:20}});
+    ScrollReveal().reveal('.slide-up', slideUp);
+    ScrollReveal().reveal('.slide-right', slideRight);
+    ScrollReveal().reveal('.easing',{easing:'cubic-bezier(0.5,0,0,1)'});
+    </script>
+  
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+</body>
+</html>

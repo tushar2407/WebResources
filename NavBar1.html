@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar Slider effect</title>
+    <style>
+        body{
+            background-color: white;
+        }
+        ul{
+            margin:0;
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            width:80%;
+            background-color: #ffbe00;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 0;
+            box-shadow: 0 25ps 50px rgba(0,0,0,0.2);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        li{
+            width: 100%;
+            height: 100%;
+            text-align: center;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+            font-weight: 600 ;
+            font-size: 30px;
+        }
+        .slider{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 25%;
+            height: 5px;
+            background-color: #369fff;
+            transition: all 0.3s ease-out;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        li:nth-child(1):hover ~ .slider{
+            margin-left: 0%;
+        }
+        li:nth-child(2):hover ~ .slider{
+            margin-left: 25% ;
+        }
+        li:nth-child(3):hover ~ .slider{
+            margin-left:50%;
+        }
+        li:nth-child(4):hover ~ .slider{
+            margin-left: 75% ;
+        }
+        
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a>Home</a></li>
+        <li><a>Gallery</a></li>
+        <li><a>Contact</a></li>
+        <li><a>About</a></li>
+        <div class="slider"></div>
+    </ul>
+</body>
+</html>

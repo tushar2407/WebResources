@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .wavy{
+            padding:5rem;
+            color:white;
+
+        }
+        .wavy h1{
+            text-align: center;
+            font-size: 2rem;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 0.1rem;
+        }
+        svg{
+            position: absolute;
+            top:0;
+            z-index: -1;
+        }
+        path{
+            fill:aqua
+        }
+    </style>
+</head>
+<body>
+    
+    <section class="wavy">
+        <h1>Wavy background </h1>
+    </section>
+    <svg viewBox="0 0 500 200">
+        <path d="M0, 100 C150, 200 350, 0 500, 100 L500, 00 L0, 0 Z"></path>
+    </svg>
+</body>
+</html>

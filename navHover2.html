@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar hover</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            box-sizing: border-box;
+        }
+        .navigation{
+            display: flex;
+            justify-content:center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        .navigation ul{
+            position: relative ;
+        }
+        .navigation ul li{
+            text-align: center;
+            list-style-type: none;
+        }
+        .navigation ul li a{
+            color:#333;
+            text-decoration: none;
+            padding :5px;
+            display: inline-flex;
+            transition: 0.5s;
+        }
+        .navigation ul:hover li a{
+            color:#0002;
+        }
+        .navigation ul li:hover a{
+            color:#000;
+            background: #fff;
+        }
+        .navigation ul li a:before{
+            content:'';
+            position: absolute;
+            top:50%;
+            left:50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color:rgba(0,0,0,0.1);
+            z-index: -1;
+            opacity: 0;
+            font-size: 5em;
+            transform: translate(-50%, -50%);
+            text-transform: uppercase;
+            letter-spacing: 500px;
+            transition: letter-spacing 0.5s, left 0.5s;
+        }
+        .navigation ul li a:hover:before{
+            content:attr(data-text);
+            opacity: 1;
+            letter-spacing: 10px;
+            left:50%;
+            width: 1800px;
+            height: 1800px;
+        }
+        .navigation ul li:nth-child(1) a:before{
+            background: #81ecec;
+        }
+        .navigation ul li:nth-child(2) a:before{
+            background: #fde509;
+        }
+        .navigation ul li:nth-child(3) a:before{
+            background: #e59ff7;
+        }
+        .navigation ul li:nth-child(4) a:before{
+            background: #81eccc;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="navigation">
+        <ul>
+            <li><a href="#" data-text="Home">Home</a></li>
+            <li><a href="#" data-text="Contact">Contact</a></li>
+            <li><a href="#" data-text="About">About</a></li>
+            <li><a href="#" data-text="Service">Service</a></li>
+        </ul>
+    </div>
+    
+</body>
+</html>

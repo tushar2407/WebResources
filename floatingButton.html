@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floating button</title>
+    <style>
+        .icon:hover{
+            animation: iconIn 1s ;
+        }
+        @keyframes fabIn{
+            0%{ transform: rotate(0);}
+            25%{ transform: rotate(135deg);}
+            100%{ transform: rotate(135deg);}
+        }
+        @keyframes fabOut{
+            0%{ transform: rotate(135deg);}
+            25%{ transform: rotate(0);}
+            100%{ transform: rotate(0);}
+        }
+        @keyframes menuIn{
+            0%{ transform: rotate(-135deg);}
+            20%{ transform: rotate(-135deg);}
+            50%{ transform: rotate(0);}
+            100%{ transform: rotate(0);}
+        }
+        @keyframes menuOut{
+            0%{ transform: rotate(0);}
+            30%{ transform: rotate(-135deg);}
+            100%{ transform: rotate(-135deg);}
+        }
+        @keyframes circleIn {
+            0%{
+                opacity: 0;
+                transform: scale(0);
+            }
+            50%{
+                opacity: 1s;
+                transform: scale(1);
+            }
+        }
+        @keyframes circleOut {
+            100%{
+                opacity: 0;
+                transform: scale(0);
+            }
+            25%{
+                opacity: 1s;
+                transform: scale(1);
+            }
+        }
+        @keyframes iconIn {
+            0%{ opacity:0;}
+            75%{ opacity:0;}
+            100%{ opacity:1;}
+        }
+        @keyframes iconOut {
+            0%{ opacity:1;}
+            75%{ opacity:0;}
+            100%{ opacity:0;}
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button class ="fab">
+            +
+        </button>
+        <div class="menu">
+            <div class="circle">
+                <span class="icon">+</span>
+                <span class="icon">+</span>
+                <span class="icon">+</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

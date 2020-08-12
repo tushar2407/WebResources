@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Navbar style on scroll</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        body{
+            color:white;
+            text-decoration: uppercase;
+        }
+        header{
+            width:100vw;
+            height: 10vh;
+            background-color: black;
+            display:flex;
+            align-items: center;
+            position:fixed;
+            transition: all 0.3s;
+        }
+        h1{
+            padding-left:40px;
+            cursor: pointer;
+        }
+        section{
+            display:grid;
+            place-items:center;
+        }
+        .home{
+            height: 90vh;
+        }
+        .about, .services{
+            background-color: white;
+            height: 100vh;
+            color: black;
+        }
+        .change{
+            background-color: white;
+            color:black;
+            box-shadow: 0 20px 30px rgba(0,0,0,0.3);
+        }   
+
+    </style>
+</head>
+<body>
+    <header class="change">
+        <h1>Logo</h1>
+    </header>
+    <section class="home">
+        <h2>home</h2>
+    </section>
+    <section class="about">
+        <h2>about</h2>
+    </section>
+    <section class="services">
+        <h2>services</h2>
+    </section>
+    <script>
+        const header=document.querySelector("header");
+        window.addEventListener("scroll",()=>{
+            header.classList.toggle("change",window.scrollY>10);
+            console.log(window.scrollY);
+        });
+    </script>
+</body>
+</html>

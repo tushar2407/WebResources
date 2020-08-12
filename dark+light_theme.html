@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <title></title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/1c2c2462bf.js" crossorigin="anonymous"></script>
+<!--     <link rel="stylesheet" href="style.css"> -->
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*Light*/
+html[data-theme='light']{
+    --bg:#ebf5fc;
+    --box-shadow: -2px -2px 5px rgba(255, 255, 255, 1), 
+                  3px 3px 5px rgba(0, 0, 0, 0.1);
+    --box-shadow-inset: inset -2px -2px 5px rgba(255, 255, 255, 1), 
+                        inset 3px 3px 5px rgba(0, 0, 0, 0.1);
+    --icon-color: #6a9bd8;
+    --button-bg: #222;
+    --text-color: #ebf5fc;
+}
+/*Dark*/
+html[data-theme='dark']{
+    --bg:#222;
+    --box-shadow: -2px -2px 5px rgba(255,255,255,0.05), 
+                  3px 3px 5px rgba(0,0,0,0.5);
+    --box-shadow-inset: inset -2px -2px 5px rgba(255,255,255,0.01),
+                        inset 1px 1px 5px rgba(0,0,0,0.8);
+    --icon-color: #5d9ce9;
+    --button-bg: #ebf5fc;
+    --text-color: #222;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--bg);
+}
+.mode{
+    top: 18%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: var(--button-bg);
+    color: var(--text-color);
+}
+ul {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    padding: 20px;
+    width: 240px;
+    background: var(--bg);
+    box-shadow: var(--box-shadow);
+}
+ul li {
+    position: relative;
+    list-style: none;
+    text-align: center;
+    margin: 15px;
+}
+
+ul li label { position: relative; cursor: pointer; }
+
+ul li label input[type="checkbox"] { position: absolute; opacity: 0; }
+
+ul li label :checked ~ .icon-box { box-shadow: var(--box-shadow-inset); }
+
+ul li label :checked ~ .icon-box .fa { transform: scale(0.95); }
+
+ul li label .icon-box {
+    width: 60px;
+    height: 60px;
+    background: var(--bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--box-shadow);
+    border-radius: 10px;
+}
+
+ul li label .icon-box .fa { font-size: 20px; color: var(--icon-color); }
+    </style>
+</head>
+<body>
+    <div class="social-icons">
+        <button class="mode">Light</button>
+        <ul>
+            <li><label>
+                <input type="checkbox" name="">
+                <div class="icon-box">
+                <i class="fa fa-home" aria-hidden="true"></i>
+                </div>
+            </label></li>
+            <li><label>
+                <input type="checkbox" name="">
+                <div class="icon-box">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                </div>
+            </label></li>
+            <li><label>
+                <input type="checkbox" name="">
+                <div class="icon-box">
+                <i class="fa fa-plane" aria-hidden="true"></i>
+                </div>
+            </label></li>
+            <li><label>
+                <input type="checkbox" name="">
+                <div class="icon-box">
+                    <i class="fa fa-moon" aria-hidden="true"></i>
+                </div>
+            </label></li>
+            <li><label>
+                <input type="checkbox" name="">
+                <div class="icon-box">
+                    <i class="fa fa-battery-full" aria-hidden="true"></i>
+                </div>
+            </label></li>
+            <li><label>
+                <input type="checkbox" name="">
+                <div class="icon-box">
+                    <i class="fa fa-code" aria-hidden="true"></i>
+                </div>
+            </label></li>
+        </ul>
+    </div>
+    <script>
+            const mode = document.querySelector('.mode');
+    let dark = false;
+    mode.addEventListener('click',() => {
+        if(dark){
+            dark = false;
+            document.documentElement.setAttribute('data-theme','dark');
+            mode.textContent = 'light';
+            
+        }
+        else{
+            dark = true;
+            document.documentElement.setAttribute('data-theme','light');
+            mode.textContent = 'dark';
+        }
+    })
+    </script>
+  </body>

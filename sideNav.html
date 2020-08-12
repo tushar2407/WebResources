@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/1c2c2462bf.js" crossorigin="anonymous"></script>
+    <style>
+        .toggle{
+            position: absolute;
+            left:2.5rem;
+            top:2.5rem;
+            cursor: pointer;
+        }
+        .toggle img{
+            width:2.5rem;
+        }
+        .menu{
+            position:fixed;
+            left:0;
+            top:0;
+            width:50vw;
+            height: 100vh;
+            background-color: #e91e63;
+            transform: translateX(-101%);
+            will-change:transform;
+            transition: all 0.25s ease-in;
+        }
+        .menu.open{
+            transform:translateX(0);
+        }
+        .home{
+            min-height: 100vh;
+            width: 100%;
+            padding:8rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="toggle" id="toggle">
+        <i class="fa fa-bars" style="color: pink;"></i>
+    </div>
+    <div id="menu" class="menu"></div>
+    <section class="home">
+        <h1>Home</h1>
+        <p>Lorem ipsum ....</p>
+    </section>
+    <script>
+        var btn=document.getElementById('toggle');
+        var menu=document.getElementById('menu');
+        btn.addEventListener('click', toggleMenu);
+        menu.addEventListener('click', toggleMenu);
+        function toggleMenu(){
+            if( menu.classList.contains('open')){
+                menu.classList.remove('open');
+            }
+            else{
+                menu.classList.add('open');
+            }
+        }
+    </script>
+</body>
+</html>

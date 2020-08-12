@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>button hover animate</title>
+    <style>
+        body{
+            background-color: #111;
+        }
+        a{
+            position: relative;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+            text-transform: uppercase;
+            color:aliceblue;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            padding: 16px 48px;
+            text-decoration: none;
+            border:2px solid black;
+            overflow:hidden;
+            transition: color 1.2s;
+        }
+        a::before, a::after{
+            content:"";
+            position:absolute;
+            top:50%;
+            width:20px;
+            height:20px;
+            border-radius: 50%;
+            background-color: aliceblue;
+            z-index: -1;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.7);
+        }
+        a:before{
+            transform:translate(-50%,-50%);
+            left:-30px;
+        }
+        a::after{
+            transform:translate(50%,-50%);
+            right:-30px;
+        }
+        a:hover::before{
+            animation:toRight 0.9s forwards;
+        }
+        a:hover::after{
+            animation: toLeft 0.9s forwards;
+        }
+        a:hover{
+            color:#111;
+        }
+        @keyframes toRight{
+            0%{
+                left:-20px;
+            }
+            50%{
+                width:20px;
+                height: 20px;
+                left:50%;
+            }
+            100%{
+                width:200px;
+                height:200px;
+                left:50%;
+            }
+        }
+        @keyframes toLeft{
+            0%{
+                right:-20px;
+            }
+            50%{
+                width:20px;
+                height: 20px;
+                right:50%;
+            }
+            100%{
+                width:200px;
+                height:200px;
+                right:50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#">Hover me</a>
+    <a href="#">submit</a>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nav Hover</title>
+    <style>
+        .menu{
+            width:100%;
+            list-style: none;
+        }
+        .menu li a {
+            align-items: center;
+            display: flex;
+            color:black;
+            text-decoration: none;
+        }
+        .menu li a:before{
+            content:"";
+            height:1px;
+            width:0;
+            background:black;
+            margin-left: 5px;
+            margin-right: 5px;
+            transition: 0.3s;
+        }
+        .menu li a:hover::before{
+            width: 15px;
+        }
+    </style>
+</head>
+<body>
+    <ul class="menu">
+        <li> <a> Home </a> </li>
+        <li> <a> About </a> </li>
+        <li> <a> Github </a> </li>
+        <li> <a> Dribble </a> </li>
+        <li> <a> Facebook </a> </li>
+    </ul>
+</body>
+</html>

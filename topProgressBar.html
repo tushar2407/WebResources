@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Style defined first. Copy this to a css style sheet or to the head section -->
+<style>
+    .progress-bar {
+        background: linear-gradient(to right, red var(--scroll), transparent 0);
+        background-repeat: no-repeat;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 4px;
+        z-index: 1;
+    }
+    </style>
+    
+    <!-- This is the bar which shows scroll percentage -->
+    <div style="height: 100vh;"></div>
+    <div class="progress-bar"></div>
+    <div style="height: 100vh; background-color: aqua;"></div>
+    <div style="height: 100vh; background-color: black;"></div>
+    
+    <!-- Script used to generate --scroll variable with current scroll percentage value -->
+    <script>
+    var element = document.documentElement,
+      body = document.body,
+      scrollTop = 'scrollTop',
+      scrollHeight = 'scrollHeight',
+      progress = document.querySelector('.progress-bar'),
+      scroll;
+    
+    document.addEventListener('scroll', function() {
+        console.log(element[scrollTop]+" element scroll top");
+        console.log(element[scrollHeight]+" element scroll height");
+        console.log(body[scrollTop]+" body scroll top");
+        console.log(body[scrollHeight]+" body scroll height");
+        console.log((element[scrollTop] || body[scrollTop])+" or");
+        console.log((element.clientHeight)+" client height");
+      scroll = (element[scrollTop]) / ((element[scrollHeight]) - element.clientHeight) * 100;
+      progress.style.setProperty('--scroll', scroll + '%');
+    });
+    </script>
+</body>
+</html>
