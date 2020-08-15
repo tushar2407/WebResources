@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/1c2c2462bf.js" crossorigin="anonymous"></script>
+    <title>Card hover </title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            background-color: black;
+        }
+        .main{
+            width:100%;
+            height: 100vh;
+            display:flex;
+            justify-content: center;
+            align-items:center;
+        }
+        .card{
+            width: 300px;
+            height: 350px;
+            position:relative;
+            overflow:hidden;
+            transition:all 0.4s;
+        }
+        .card:hover{
+            box-shadow: 10px 10px rgb(255,0,0), 20px 20px 2px rgba(0,13,255,0.775);
+        }
+        .card img{
+            width:100%;
+            height: 100%;
+            transition:all 0.4s;
+        }
+        .card:hover img{
+            transform: scale(1.1);
+        }
+        .icons{
+            position:absolute;
+            top:250px;
+            padding:3px;
+            background-color: rgba(255,255,255,0.578);
+        }
+        .icons i{
+            color:black;
+        }
+        .ic1{
+            border-radius: 0 10px 10px 0;
+            transform:translateX(-100%);
+            left:0;
+            transition:all 0.4s;
+        }
+        .ic2{
+            border-radius:  10px 0 0  10px ;
+            transform:translateX(100%);
+            right:0;
+            transition:all 0.4s;
+        }
+        .card:hover .ic1, .card:hover .ic2{
+            transform: translateX(0);
+        }
+        .text{
+            width:100%;
+            position:absolute;
+            bottom:0;
+            background: rgba(255,255,255,0.476);
+            text-align: center;
+            transition:all 0.4s;
+        }
+        card:hover .text{
+            transform: translateY(-20px);
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="card">
+            <img src="1.jpg">
+            <div class="icons ic1">
+                <a href="">
+                    <i class="fab fa-instagram fa-2x"></i>
+                </a>
+                <a href="">
+                    <i class="fab fa-twitter fa-2x"></i>
+                </a>
+            </div>
+            <div class="icons ic2">
+                <a href="">
+                    <i class="fab fa-facebook fa-2x"></i>
+                    <i class="fab fa-github fa-2x"></i>
+                </a>
+            </div>
+            <div class="text">
+                <h2>Tushar Mohan</h2>
+                <p>Web Dev</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
