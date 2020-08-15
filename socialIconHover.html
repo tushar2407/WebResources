@@ -43,7 +43,7 @@
             z-index: 1;
             transition: var(--trans-property);
         }
-        .socail-icon:after{
+        .socail-icon::after{
             content:"";
             width: var(--link-size);
             height: var(--link-size);
@@ -52,19 +52,19 @@
             border-radius: 50%;
             transition:var(--trans-property);
         }
-        .social-icon.twitter:after{
+        .social-icon.twitter::after{
             background-color: #1da1f2;
         }
-        .socail-icon.github:after{
+        .socail-icon.github::after{
             background-color: #24292e;
         }
-        .socail-icon.dribble:after{
+        .socail-icon.dribble::after{
             background-color: #ea4c89;
         }
-        .socail-icon.instagram:after{
+        .socail-icon.instagram::after{
             background-color: #5851db;
         }
-        .socail-icon.facebook:after{
+        .socail-icon.facebook::after{
             background-color: #1769ff;
         }
         /*  Animations incoming*/
@@ -75,7 +75,7 @@
         .socail-icon:hover i{
             color: #ffff;
         }
-        .socail-icon:hover:after{
+        .socail-icon:hover::after{
             transform: translate(0) scale(1.2);
         }
     </style>

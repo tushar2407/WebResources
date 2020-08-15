@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Ripple effects</title>
+    <style>
+        .btn-ripple{
+            position: relative;
+            overflow:hidden;
+            border:none;
+            outline:none;
+            font-size:12pt;
+            font-weight:bold;
+            text-transform: uppercase;
+            color:#fff;
+            background-color: #FF4754;
+            border-radius:4px;
+            padding: 1.4rem 4rem;
+            transition-property: opacity, box-shadow, transform ;
+            transition-timing-function: ease-in-out;
+            transition-duration: .2s;
+        }
+        .btn-ripple:hover{
+            cursor: pointer;
+            opacity:.8;
+            box-shadow: 0 14px 28px rgba(0,0,0,.25),
+                        0 14px 10px rgba(0,0,0,.22);
+            transform: translateY(-.1rem);
+        }
+        .btn-ripple:active{
+            transform: translateY(.1rem);
+        }
+        .btn-ripple .ripple{
+            pointer-events:none;
+            position:absolute;
+            border-radius:50%;
+            background-color: rgba(255,255,255,.6);
+            opacity:0;
+            animation: rippleAnimation .6s ease-in-out;
+        }
+        @keyframes rippleAnimation {
+            from { 
+                opacity : .7;
+                transform: scale(0);
+            }
+            80%{
+                opacity: .3;
+            }
+            to{
+                opacity:.1;
+                transform: scale(1.2) ;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="btn-ripple"> Button </button>
+    <script>
+        
+        const onClick = event => {
+            const button = event.target;
+            const appendRipple = document.createElement('div');
+            appendRipple.classList.add('ripple');
+
+            const size= button.offsetWidth * 2 + 'px';
+            appendRipple.style.height = appendRipple.style.width = size;
+            const x = event.clientX - button.offsetLeft - button.offsetWidth;
+            const y = event.clientY - button.offsetTop - button.offsetWidth;
+
+            appendRipple.style.left = x+'px';
+            appendRipple.style.top = y + 'px';
+
+            button.appendChild(appendRipple);
+            setTimeout(()=>{
+                button.removeChild(appendRipple);
+            }, 600);
+        };
+        document.querySelectorAll('.btn-ripple').forEach(button => {
+            button.addEventListener('click', onClick);
+        });
+    </script>
+</body>
+</html>
