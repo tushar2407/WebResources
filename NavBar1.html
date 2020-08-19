@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navbar Slider effect</title>
     <style>
+        *{
+            margin:0;
+            padding:0;
+        }
         body{
             background-color: white;
         }
         ul{
             margin:0;
             position:absolute;
-            top:50%;
-            left:50%;
-            transform: translate(-50%,-50%);
-            width:80%;
+            width:100%;
             background-color: #ffbe00;
             list-style: none;
             display: flex;
@@ -58,16 +59,17 @@
         li:nth-child(4):hover ~ .slider{
             margin-left: 75% ;
         }
-        
     </style>
 </head>
 <body>
-    <ul>
-        <li><a>Home</a></li>
-        <li><a>Gallery</a></li>
-        <li><a>Contact</a></li>
-        <li><a>About</a></li>
-        <div class="slider"></div>
-    </ul>
+    
+        <ul>
+            <li><a>Home</a></li>
+            <li><a>Gallery</a></li>
+            <li><a>Contact</a></li>
+            <li><a>About</a></li>
+            <div class="slider"></div>
+        </ul>
+    /
 </body>
 </html>

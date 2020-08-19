@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+        body{
+            
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        .navbar{
+            width: 100%;
+            background:100%;
+            border-bottom: 1px solid #ccc;
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 30px;
+            box-sizing:border-box;
+        }
+        .icon, .close-btn{
+            display:none;
+            font-size:1.2rem;
+            cursor:pointer;
+        }
+        .links{
+            display: flex;
+            list-style: none;
+        }
+        .links li{
+            margin-right: 24px;
+        }
+        .links li a{
+            text-decoration: none;
+            color:#575757;
+            letter-spacing: -0.5px;
+        }
+        .links li a:hover{
+            color:#000;
+        }
+        .backdrop{
+            display:none;
+            animation: 0.4s ease-in-out fadein forwards;
+            position:absolute;
+            top:0;
+            bottom: 0;
+            right: 0;
+            left:0;
+            background: rgbe(0,0,0,0);
+            cursor: pointer;
+        }
+        @keyframes fadein{
+            to{
+                background: rgba(0,0,0,0.8);
+            }
+        }
+        @media (max-width:675px){
+            .icon, .close-btn{
+                display:block;
+            }
+            .icon{
+                position: absolute;
+                right: 24px;
+            }
+            .links{
+                position: absolute;
+                top: 0;
+                height: 100%;
+                width: 90%;
+                right: -90%;
+                background: #fff;
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                z-index:2;
+                transition: 0.3s ease-in-out;
+            }
+            .links li{
+                margin-right: 0 ;
+                margin-bottom: 50px;
+                font-size:1.5rem;
+            }
+            .close-btn{
+                position: absolute;
+                top:24px;
+                right: -90vh;
+                color: #575757;
+                font-size: 2em;
+                z-index: 3;
+                transition: 0.3s ease-in-out;
+            }
+            .close-btn:hover{
+                color: black;
+                cursor: pointer;
+            }
+            .open .links{
+                right: 0;
+
+            }
+            .open .close-btn {
+                right: 32px;
+            }
+            .open .backdrop{
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <h3 class="logo">Logo</h3>
+        <div class="icon"><i class="fas fa-bars"></i></div>
+        <div class="links-wrapper active">
+            <div class="backdrop"></div>
+            <div class="close-btn"><i class="fas fa-times"></i></div>
+            <ul class="links">
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Projects</a></li>
+                <li><a href="">Testimony</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </div>
+    </nav>    
+    <script>
+        const openIcon = document.querySelector('.icon');
+        const linkWrapper = document.querySelector('.links-wrapper');
+        const backdrop = document.querySelector('.backdrop');
+        const closeIcon = document.querySelector('.close-btn');
+
+        openIcon.addEventListener('click' , () =>{
+            linkWrapper.classList.add('open');
+        });
+        closeIcon.addEventListener('click', () => {
+            linkWrapper.classList.remove('open');
+        });
+        backdrop.addEventListener('click', () => {
+            linkWrapper.classList.remove('open');
+        })
+    </script>
+</body>
+</html>
