@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detect caps lock</title>
+    <style>
+        input
+        {
+            background: #000;
+            color: #fff;
+            border:.1rem solid #FF4754;
+            border-radius:.2rem;
+            outline: none;
+            padding: 1.2rem .8rem;
+        }
+        #caps-message{
+            color: #FF4754;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        #cap-message svg{
+            margin-right: .4rem ;
+        }
+    </style>
+</head>
+<body>
+    
+    <input type="text" placeholder="write somethin ...">
+    <span id="caps-message">
+        <i data-feather="alert-triangle"></i>
+        Caps Lock is on!
+    </span>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script> feather.replace()</script>
+    <script>
+        const capMessage = document.querySelector("#caps-message");
+        window.addEventListener('keyup', event =>{
+            if(event.getModifierState('CapsLock')){
+                capMessage.style.display='flex';
+            }
+            else{
+                capMessage.style.display='none';
+
+            }
+        })
+    </script>
+</body>
+</html>

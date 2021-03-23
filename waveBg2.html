@@ -1,0 +1,53 @@
+<!DOCTYPE html> 
+<html> 
+      
+<head> 
+    <title> 
+        How to Create a Wave Image 
+        for a Background using CSS?     
+    </title> 
+      
+    <style> 
+        svg { 
+            display: inline-block; 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            z-index: -1; 
+        } 
+        .container { 
+            display: inline-block; 
+            position: absolute; 
+            width: 100%; 
+            padding-bottom: 100%; 
+            vertical-align: middle; 
+            overflow: hidden; 
+            top: 0; 
+            left: 0; 
+        } 
+        body { 
+            overflow: hidden; 
+        } 
+    </style> 
+</head> 
+  
+<body style="text-align:center;"> 
+    <h1 style="color:lawngreen;"> 
+        Geeks For Geeks 
+    </h1> 
+      
+    <div class="container"> 
+      
+        <!-- Creating a SVG image -->
+        <svg viewBox="0 0 500 500" 
+            preserveAspectRatio="xMinYMin meet"> 
+              
+            <path d="M0, 100 C150, 200 350, 
+                0 500, 100 L500, 00 L0, 0 Z" 
+                style="stroke:none; fill:dodgerblue;"> 
+            </path> 
+        </svg> 
+    </div> 
+</body> 
+  
+</html> 
